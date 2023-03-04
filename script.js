@@ -6,8 +6,8 @@ function DomElement (selector, height, width, baground, fontsize) {
 	this.bg = baground,
 	this.fontSize = fontsize,
 
-	this.createElem = function (selector) {
-	if (selector.startsWith('.')) {
+	this.createElem = function () {
+	if (this.selector.startsWith('.')) {
 		let div = document.createElement('div');
 		div.classList.add('block');
 		div.innerHTML = 'text';
@@ -18,31 +18,17 @@ function DomElement (selector, height, width, baground, fontsize) {
 		document.body.append(div);
 		console.log(div);
 	}
-	if (selector.startsWith('#')) {
+	if (this.selector.startsWith('#')) {
 		let p = document.createElement('p')
 		p.setAttribute('id','block')
 		p.innerHTML = 'text';
 		document.body.append(p)
 		console.log(p);
 	}
-
-	this.createSquare = function () {
-		let square =  document.createElement('div')
-		square.style.cssText = "position: absolute; height: 100px; width:100px; background-color: black;"
-		document.body.append(square)
-
-		square.addEventListener('keydown',shiftSquere)
-		function shiftSquere (event) {
-			console.log(event.type);
-		}
-		console.log(square);
-
-	}
 	}
 }
-const domElement = new DomElement('.asd','25px','22','green','35px')
-domElement.createElem('asd')
-domElement.createSquare()
+const domElement = new DomElement('asd','25px','22','green','35px')
+domElement.createElem()
 console.log(domElement);
 
 
