@@ -6,9 +6,7 @@ function DomElement (selector, height, width, baground, fontsize,position) {
 	this.bg = baground,
 	this.fontSize = fontsize,
 	this.position = position
-
 	this.element = undefined;
-
 	this.createElem = function () {
 		if (this.selector.startsWith('.') || this.selector.startsWith('#')) {
 			if (this.selector.startsWith('.')) {
@@ -39,7 +37,6 @@ function DomElement (selector, height, width, baground, fontsize,position) {
 				this.element.style.top = -10 + 'px'
 			}
 		}
-
 		this.down = function () {
 			if(parseInt(this.element.style.top)){
 				this.element.style.top = '10px'
@@ -48,7 +45,6 @@ function DomElement (selector, height, width, baground, fontsize,position) {
 				this.element.style.top = 10 + 'px'
 			}
 		}
-
 		this.left = function () {
 			if(parseInt(this.element.style.left)){
 				this.element.style.left = '-10px'
@@ -57,7 +53,6 @@ function DomElement (selector, height, width, baground, fontsize,position) {
 				this.element.style.left = -10 + 'px'
 			}
 		}
-
 		this.right = function () {
 			if(parseInt(this.element.style.left)){
 				this.element.style.left = '10px'
@@ -71,7 +66,6 @@ function DomElement (selector, height, width, baground, fontsize,position) {
 const domElement = new DomElement('.asd','100px','100px','green','35px','absolute')
 domElement.createElem()
 console.log(domElement);
-
 
 document.addEventListener('keydown', function (event) {
 	if(event.key === 'ArrowUp'){
