@@ -26,18 +26,22 @@ function DomElement (selector, height, width, baground, fontsize) {
 		console.log(p);
 	}
 
-	// this.createSquare = function () {
-	// 	let square =  document.createElement('div')
-	// 	square.style.cssText = "position: absolute; height: 100px; width:100px; background-color: black;"
-	// 	document.body.append(square)
-	// 	square.addEventListener('keydown',)
-	// 	console.log(square);
+	this.createSquare = function () {
+		let square =  document.createElement('div')
+		square.style.cssText = "position: absolute; height: 100px; width:100px; background-color: black;"
+		document.body.append(square)
 
-	// }
+		square.addEventListener('keydown',shiftSquere)
+		function shiftSquere (event) {
+			console.log(event.type);
+		}
+		console.log(square);
+
+	}
 	}
 }
 const domElement = new DomElement('.asd','25px','22','green','35px')
-domElement.createElem('.asd')
+domElement.createElem('asd')
 domElement.createSquare()
 console.log(domElement);
 
